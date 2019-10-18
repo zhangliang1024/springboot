@@ -1,0 +1,75 @@
+# 引入Druid依赖时注意：
+# 1. 这里可以引入两种依赖
+#   a. 直接引入druid包
+#   b. 引入starter包
+# 2. 如果引入的不是druid-spring-boot-starter,在配置文件 properties/yml中将不会出现druid的提示
+# 3. 访问地址：http://localhost:8080/drudi/index.html
+#    druid-druid登陆
+
+
+
+#JDBC配置
+spring:
+  # JPA 配置
+  jpa:
+    show-sql: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot_druid?characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 配置连接信息
+    druid:
+      # 初始化建立物理连接的个数
+      initial-size: 5
+      # 最小等待连接池数量
+      min-idle: 5
+      # 最大连接池数量
+      max-active: 20
+      # 获取连接时最大等待时间，单位：毫秒
+      max-wait: 60000
+      # 申请连接的时候检测，若果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效
+      test-while-idle: true
+      # 既做为检测的时间又作为testWhileIdle执行的依据
+      time-between-eviction-runs-millis: 60000
+      # 销毁线程是检测当前连接的最后活动时间和当前时间差大于改值时，关闭当前连接
+      min-evictable-idle-time-millis: 30000
+      # 检测连接是否有效 sql必须是一个查询语句，mysql中为 select 'x'  oracle中为 select 1 from dual
+      validation-query: select 'x'
+      # 申请连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true
+      test-on-borrow: false
+      # 归还连接时执行validationQuery检测连接是否有效,开启会降低性能,默认为true
+      test-on-return: false
+      # 当数据库抛出不可恢复的异常时,抛弃该连接
+      #exception-sorter:
+      # 当值大于0时,poolPreparedStatements会自动修改为true
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置 监控拦截的filters,去掉后监控界面sql无法统计，wall：用于防火墙,防御sql注入 stat:监控统计 log4j:日志
+      filter: stat,wall,log4j
+      # 通过connectionProperties属性来打开mergeSql功能,慢Sql记录
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+      # 合并多个DruidDatasource的监控数据
+      use-global-data-source-stat: true
+      # 设置访问druid监控页的账号和密码,默认没有
+      stat-view-servlet:
+        login-username: druid
+        login-password: druid
+      # 配置Spring监控AOP切入点,配置多个逗号隔开 如：x.y.z.service.*
+#      aop-patterns:
+
+      # 指定当连接超过废弃超时时间时，是否立刻删除该连接
+      remove-abandoned: true
+      # 指定连接应该被废弃的时间
+      remove-abandoned-timeout: 60
+      # 使用DBCP connection pool，是否追踪废弃statement或连接，默认为: false
+      log-abandoned: true
+
+
+
+
+

@@ -1,0 +1,23 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    master:
+      jdbc-url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+    slave1:
+      jdbc-url: jdbc:mysql://localhost:3306/test
+      username: pig   # 只读账户
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+    slave2:
+      jdbc-url: jdbc:mysql://localhost:3306/test
+      username: pig   # 只读账户
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: spring-boot-write-read
+

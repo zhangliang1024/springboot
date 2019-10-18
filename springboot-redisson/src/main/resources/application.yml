@@ -1,0 +1,13 @@
+
+
+spring:
+  application:
+    name: springboot-redisson
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 1
+    timeout: 200
+
+

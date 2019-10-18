@@ -1,0 +1,12 @@
+
+
+
+
+cloud:
+  type: 2
+  aliyun-domain: http://zhliang1024.oss-cn-beijing.aliyuncs.com
+  aliyun-bucket-name: zhliang1024
+  aliyun-prefix: my-second-key
+  aliyun-access-key-id: LTAIHZdBPBkkbArT
+  aliyun-access-key-secret: C4nRidPK9cN06XgaJsPQfmY7sXgYaz
+  aliyun-end-point: http://oss-cn-beijing.aliyuncs.com

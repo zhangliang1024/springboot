@@ -1,0 +1,7 @@
+spring:
+  rabbitmq:
+    addresses: 111.231.202.87:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    publisher-confirms: true

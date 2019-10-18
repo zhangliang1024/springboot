@@ -1,0 +1,27 @@
+
+
+person:
+  name: zhangsan
+  age: 20
+  sex: male
+  maps: {k1: v1,k2: v2}
+  list:
+  - {name: 小黑, age: 22}
+  - name: 小白
+  - age: 33
+  dog:
+    name: 大黄
+    age: 12
+
+mail:
+  host: localhost
+  port: 25
+  from: me@126.com
+  username: zhangsan
+  password: abcd1234
+  smtp:
+    auth: false
+    starttls-enable: false
+
+
+
