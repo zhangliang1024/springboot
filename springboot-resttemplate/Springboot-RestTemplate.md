@@ -11,3 +11,6 @@ For further reference, please consider the following sections:
 > [RestTemplate提交表单数据的三种方法](https://blog.csdn.net/yiifaa/article/details/77939282)
 
 > [spring boot resttemplate 使用及支持https协议](https://blog.csdn.net/u013469944/article/details/84193792)
+
+> [Springboot restTemplate请求资源时设置请求头(UriComponentsBuilder)](https://blog.csdn.net/zhuchunyan_aijia/article/details/90610703)
+
