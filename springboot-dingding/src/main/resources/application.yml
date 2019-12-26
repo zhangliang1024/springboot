@@ -1,0 +1,8 @@
+
+
+#spring.dingding.webhook=https://oapi.dingtalk\
+#  .com/robot/send?access_token=2054d08530267996ab25bdbd62b89ab1b573ae5c8418ff1a7c701eb9d1cee8d8
+
+dingding:
+  robot:
+    access_token: 2054d08530267996ab25bdbd62b89ab1b573ae5c8418ff1a7c701eb9d1cee8d8

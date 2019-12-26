@@ -1,0 +1,12 @@
+
+
+rgyb:
+  greeting:
+    enable: true
+    members:
+      - lisi
+      - zhangsan
+project:
+  hello:
+    prefix: hi
+    suffix: what's up man ?

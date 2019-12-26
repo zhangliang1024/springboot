@@ -1,0 +1,3 @@
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.zhliang.springboot.custom.starter.autoconfigure\
+#  .HelloAutoConfiguration,com.zhliang.springboot.custom.starter.autoconfigure\
+#  .GreetingAutoConfiguration

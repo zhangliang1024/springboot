@@ -1,0 +1,6 @@
+
+
+scheduleTask:
+  cron1: "*/1 * * * * ?"
+  cron2: "*/1 * * * * ?"
+

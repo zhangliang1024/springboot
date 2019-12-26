@@ -1,0 +1,35 @@
+
+# 端口
+server:
+  port: 8016
+spring:
+  application:
+    # 应用名称
+    name: node16-boot-actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        # 打开所有的监控点
+        include: "*"
+      # 自定义监控路径 monitor
+      # 默认值：http://localhost:8016/actuator/*
+      # 配置后：http://localhost:8016/monitor/*
+      base-path: /monitor
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      # 通过指定接口关闭 SpringBoot
+      enabled: true
+  # 可以自定义端口
+  # server:
+  #   port: 8089
+
+# 描述项目基础信息
+info:
+  app:
+    name: node16-boot-actuator
+    port: 8016
+    version: 1.0.0
+    author: cicada
