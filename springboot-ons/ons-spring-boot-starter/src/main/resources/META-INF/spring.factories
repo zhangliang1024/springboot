@@ -1,0 +1,2 @@
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#  com.zhliang.ons.spring.boot.starter.config.AliMQAutoConfiguration

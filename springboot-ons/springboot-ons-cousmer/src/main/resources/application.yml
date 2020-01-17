@@ -1,0 +1,10 @@
+
+# 阿里云配置
+aliyun:
+  ons:
+    enable: false
+    topic: you-topic
+    producer-id: you-producer-id
+    access-key: you-access-key
+    secret-key: you-secret-key
+    ons-addr: you-ons-addr

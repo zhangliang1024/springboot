@@ -1,0 +1,10 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+      # 扫描路径
+      additional-paths: src/main/java
+      # 排除路径
+      exclude: WEB-INF/**
+      trigger-file: trigger.txt
+

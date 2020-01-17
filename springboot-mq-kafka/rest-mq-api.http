@@ -1,0 +1,6 @@
+GET http://127.0.0.1:8080/kafka/send
+Accept: */*
+Cache-Control: no-cache
+
+###
+
