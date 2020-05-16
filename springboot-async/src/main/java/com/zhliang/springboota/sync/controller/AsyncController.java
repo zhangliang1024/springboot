@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 /**
@@ -70,4 +71,25 @@ public class AsyncController {
     }
 
 
+    @GetMapping("/async/exception")
+    public String asyncException() throws Exception{
+        long startTime = System.currentTimeMillis();
+        service.asyncTask();
+        String result = String.format("任务执行成功，耗时{%s}", System.currentTimeMillis() - startTime);
+        return result;
+    }
+
+    @GetMapping("/async/result/exception")
+    public void test() {
+        try {
+            Future future = service.asyncMethodWithResult();
+            future.get();
+        } catch (ExecutionException e) {
+            System.out.println("execution error");
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            System.out.println("interrupt error");
+            e.printStackTrace();
+        }
+    }
 }

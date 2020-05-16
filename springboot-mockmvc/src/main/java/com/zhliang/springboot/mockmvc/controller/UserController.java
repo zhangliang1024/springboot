@@ -1,7 +1,6 @@
 package com.zhliang.springboot.mockmvc.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.zhliang.springboot.mockmvc.entity.User;
 import com.zhliang.springboot.mockmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

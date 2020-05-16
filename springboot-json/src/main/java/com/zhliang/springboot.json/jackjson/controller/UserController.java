@@ -4,7 +4,6 @@ import	java.text.SimpleDateFormat;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.zhliang.springboot.json.jackjson.domain.TestIgnore;
 import com.zhliang.springboot.json.jackjson.domain.User;

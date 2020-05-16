@@ -1,0 +1,20 @@
+server:
+  port: 10001
+
+spring:
+  application:
+    name: springboot-log
+
+logging:
+  # 设置日志级别-整个项目
+  level: info
+  # 设置包级别日志
+  com.zhliang.springboot.log: debug
+  # 通过类名设置日志输出级别
+  com.zhliang.springboot.log.LogUtil: debug
+  # 用于指定日志输出目录，不能指定日志输出文件 默认名为spring.log; 若指定的是相对目录，则会生成在当前总项目的目录下
+  path: ${spring.application.name}-logs
+  # 指定日志输出文件名 会生成在当前总项目-目录下
+  file: logUtil.log
+  # 路径+文件名：同时指定目录和文件名，会在指定目录下生成指定文件名的日志文件
+  #file: D:\User\Learn\MyLearn\springboot\logs\logUtil.log

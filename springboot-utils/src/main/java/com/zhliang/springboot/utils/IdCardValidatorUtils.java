@@ -2,7 +2,7 @@ package com.zhliang.springboot.utils;
 
 /**
  * @Title: IdcardValidatorUtils.java
- * @Package com.cn.alasga.common.core.util
+ * @Package com.cn.alasga.common.assertion.util
  * @Description: TODO(用一句话描述该文件做什么)
  * @author LiJing
  * @date 2018/7/9 14:32

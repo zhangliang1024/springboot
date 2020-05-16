@@ -10,7 +10,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
@@ -37,7 +36,7 @@ public class RunTest implements ApplicationRunner {
         CountDownLatch latch = new CountDownLatch(1);
         ScheduledExecutorService service = Executors.newScheduledThreadPool(10);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1000; i++) {
             String userId = "userId_" + i;
             HttpEntity entity = buildRequest(userId);
             service.submit(() -> {

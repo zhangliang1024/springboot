@@ -20,7 +20,7 @@
 
     <dependencies>
 
-        <!--apache http core -->
+        <!--apache http assertion -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>

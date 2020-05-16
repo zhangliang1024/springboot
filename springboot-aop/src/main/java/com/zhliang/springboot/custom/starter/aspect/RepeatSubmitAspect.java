@@ -1,5 +1,6 @@
 package com.zhliang.springboot.custom.starter.aspect;
 
+import com.google.common.cache.Cache;
 import com.zhliang.springboot.custom.starter.annotation.NoRepeatSubmit;
 import com.zhliang.springboot.custom.starter.redis.RedisLock;
 import com.zhliang.springboot.custom.starter.utils.RequestUtils;
@@ -29,6 +30,8 @@ public class RepeatSubmitAspect {
     @Autowired
     private RedisLock redisLock;
 
+    @Autowired
+    private Cache<String, Integer> cache;
 
     @Pointcut("@annotation(noRepeatSubmit)")
     public void pointCut(NoRepeatSubmit noRepeatSubmit){}
@@ -50,9 +53,11 @@ public class RepeatSubmitAspect {
         //当前请求唯一标识：clientId
         String clientId = getClientId();
 
+        //本地缓存方案
+        //cachePlan(clientId);
+
         boolean success = redisLock.tryLock(key, clientId, seconds);
         log.info("tryLock key = [{}],clientId = [{}]",key,clientId);
-
 
         if(success){
             //获取锁成功
@@ -67,6 +72,20 @@ public class RepeatSubmitAspect {
             //获取锁失败，认为是重复的请求
             log.warn("repeat request ...");
             return null;
+        }
+    }
+
+    /**
+     * 使用本地缓存来代替redis
+     * 如果缓存中有这个url视为重复提交
+     */
+    private boolean cachePlan(String key) {
+        if (cache.getIfPresent(key) == null) {
+            cache.put(key, 0);
+            return true;
+        } else {
+            log.error("重复提交");
+            return false;
         }
     }
 

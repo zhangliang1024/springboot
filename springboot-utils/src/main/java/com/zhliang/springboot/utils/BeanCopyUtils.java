@@ -2,7 +2,7 @@ package com.zhliang.springboot.utils;
 
 /**
  * @Title: BeanCopyUtils.java
- * @Package com.cn.alasga.common.core.util.copy
+ * @Package com.cn.alasga.common.assertion.util.copy
  * @Description: TODO(用一句话描述该文件做什么)
  * @author LiJing
  * @date 2019/4/17 9:15

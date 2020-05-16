@@ -1,7 +1,7 @@
 /**
  * @Project Name: alasga-app
  * File Name:${FILE_NAME}
- * Package Name:com.cn.alasga.common.core.util
+ * Package Name:com.cn.alasga.common.assertion.util
  * @Date 2018/4/25/025 14:21
  * Copyright (c) 2017, http://www.alasga.cn All Rights Reserved.
  **/
