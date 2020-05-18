@@ -5,7 +5,6 @@ For further reference, please consider the following sections:
 
 ### SpringBoot 集成 KAFKA
 * [Springboot集成Kafka](https://segmentfault.com/a/1190000014991209)
-* [Spring Boot Maven Plugin Reference Guide]()
 
 ### Windows安装 KAFKA
 * [WINDOWS上KAFKA运行环境安装](https://www.cnblogs.com/lnice/p/9668750.html)

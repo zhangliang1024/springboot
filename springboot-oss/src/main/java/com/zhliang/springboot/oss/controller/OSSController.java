@@ -1,6 +1,6 @@
 package com.zhliang.springboot.oss.controller;
 
-import com.zhliang.springboot.oss.cloud.CloudStorageConfig;
+import com.zhliang.springboot.oss.cloud.config.CloudStorageConfig;
 import com.zhliang.springboot.oss.cloud.OSSFactory;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

@@ -5,10 +5,7 @@
 > [springboot+redisTemplate实现消息队列(pub/sub,list,监听键过期)](https://blog.csdn.net/weixin_37703281/article/details/93358734)
 
 ### Reference Documentation
-For further reference, please consider the following sections:
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.1.11.RELEASE/maven-plugin/)
 * [Spring Data Redis (Access+Driver)](https://docs.spring.io/spring-boot/docs/2.2.1.RELEASE/reference/htmlsingle/#boot-features-redis)
 
 ### Guides

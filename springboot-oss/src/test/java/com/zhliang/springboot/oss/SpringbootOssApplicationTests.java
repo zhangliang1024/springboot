@@ -1,6 +1,6 @@
 package com.zhliang.springboot.oss;
 
-import com.zhliang.springboot.oss.cloud.CloudStorageConfig;
+import com.zhliang.springboot.oss.cloud.config.CloudStorageConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

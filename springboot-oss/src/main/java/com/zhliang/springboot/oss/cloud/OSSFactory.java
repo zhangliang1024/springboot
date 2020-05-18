@@ -1,4 +1,9 @@
 package com.zhliang.springboot.oss.cloud;
+import com.zhliang.springboot.oss.cloud.config.CloudStorageConfig;
+import com.zhliang.springboot.oss.cloud.service.AliyunCloudStorageService;
+import com.zhliang.springboot.oss.cloud.service.CloudStorageService;
+import com.zhliang.springboot.oss.cloud.service.QcloudCloudStorageService;
+import com.zhliang.springboot.oss.cloud.service.QiniuCloudStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
