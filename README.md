@@ -7,8 +7,8 @@
 
 | 模块名称 | 模块介绍 | 备注 |
 | -------- | -------- | ---- |
-| `springboot-actuator`      | springboot 监控端点      |   |
-| `springboot-aop`           | 基于url的幂等方案      |   |
+| `springboot-actuator`      | springboot 监控端点 \ 策略模式实现      |   |
+| `springboot-aop`           | 基于url的幂等方案  \ 幂等方案总结    |   |
 | `springboot-api-mideng`    | 基于注解+拦截+TOKEN的幂等方案      |   |
 | `springboot-api-ui`        | springboot使用Knife4j代替swagger做接口文档      |   |
 | `springboot-async`         | springboot使用自定义线程池处理异常任务      |   |
