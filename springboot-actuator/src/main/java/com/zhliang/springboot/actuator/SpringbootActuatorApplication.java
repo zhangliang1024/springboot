@@ -1,7 +1,9 @@
 package com.zhliang.springboot.actuator;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * 配置Actuator组件，实现系统监控:

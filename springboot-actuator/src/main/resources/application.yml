@@ -1,32 +1,33 @@
 
-# ¶Ë¿Ú
+# ç«¯å£
 server:
   port: 8016
 spring:
   application:
-    # Ó¦ÓÃÃû³Æ
+    # åº”ç”¨åç§°
     name: node16-boot-actuator
+
 management:
   endpoints:
     web:
       exposure:
-        # ´ò¿ªËùÓĞµÄ¼à¿Øµã
+        # æ‰“å¼€æ‰€æœ‰çš„ç›‘æ§ç‚¹
         include: "*"
-      # ×Ô¶¨Òå¼à¿ØÂ·¾¶ monitor
-      # Ä¬ÈÏÖµ£ºhttp://localhost:8016/actuator/*
-      # ÅäÖÃºó£ºhttp://localhost:8016/monitor/*
+      # è‡ªå®šä¹‰ç›‘æ§è·¯å¾„ monitor
+      # é»˜è®¤å€¼ï¼šhttp://localhost:8016/actuator/*
+      # é…ç½®åï¼šhttp://localhost:8016/monitor/*
       base-path: /monitor
   endpoint:
     health:
       show-details: always
     shutdown:
-      # Í¨¹ıÖ¸¶¨½Ó¿Ú¹Ø±Õ SpringBoot
+      # é€šè¿‡æŒ‡å®šæ¥å£å…³é—­ SpringBoot
       enabled: true
-  # ¿ÉÒÔ×Ô¶¨Òå¶Ë¿Ú
+  # å¯ä»¥è‡ªå®šä¹‰ç«¯å£
   # server:
   #   port: 8089
 
-# ÃèÊöÏîÄ¿»ù´¡ĞÅÏ¢
+# æè¿°é¡¹ç›®åŸºç¡€ä¿¡æ¯
 info:
   app:
     name: node16-boot-actuator

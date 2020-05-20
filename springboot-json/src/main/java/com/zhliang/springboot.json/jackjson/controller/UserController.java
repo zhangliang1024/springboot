@@ -69,7 +69,7 @@ public class UserController {
     @GetMapping("list")
     public TestIgnore userList(){
         TestIgnore test = new TestIgnore();
-        test.setTest("test");
+        test.setTest("newobj");
         User user = new User();
         user.setId(122000083049775104L);
         user.setUsername("username");

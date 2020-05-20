@@ -100,6 +100,7 @@ ServiceException 异常又分为：
 
 #### 3. 参考文档
 [干掉 try catch](https://mp.weixin.qq.com/s/zdwHINfGng5ffv8L46iETw)
+[干掉 try catch ！](https://blog.csdn.net/xcbeyond/article/details/105872632)
 [Java生鲜电商平台-统一异常处理及架构实战](https://www.cnblogs.com/jurendage/p/11255197.html)
 [Java生鲜电商平台-缓存架构实战](https://www.cnblogs.com/jurendage/p/11269241.html)
 ★★★ 好像是原作者 

@@ -72,7 +72,9 @@ public class Controller{
 }
 ```
 ### 参考文档
-> - [在Spring Boot中使用 @ConfigurationProperties 注解](https://blog.csdn.net/lafengwnagzi/article/details/55050677)
-> - [spring boot 配置文件properties](https://blog.csdn.net/yu0_zhang0/article/details/83745056)
-> - [SpringBoot的properties和yml两种配置方式, 配置注入参数, 以及配置文件读取失效的问题](https://blog.csdn.net/zzzgd_666/article/details/80316174)
+[在Spring Boot中使用 @ConfigurationProperties 注解](https://blog.csdn.net/lafengwnagzi/article/details/55050677)
+[spring boot 配置文件properties](https://blog.csdn.net/yu0_zhang0/article/details/83745056)
+[SpringBoot的properties和yml两种配置方式, 配置注入参数, 以及配置文件读取失效的问题](https://blog.csdn.net/zzzgd_666/article/details/80316174)
 
+[Spring Boot的yml、properties配置文件自动注入详解](https://blog.csdn.net/weixin_42289383/article/details/98723533)
+[@ConfigurationProperties 注解使用姿势，这一篇就够了](https://www.jianshu.com/p/7f75936b573b)
