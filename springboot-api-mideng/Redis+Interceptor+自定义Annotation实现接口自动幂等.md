@@ -102,6 +102,7 @@ TOKEN机制的弊端
      通过一些确定的【关键字】查询数据，判断是否执行过。根据查询结果判断是否继续执行
 
 5-3. 分布式锁机制(也需要一个唯一的token或ID)
+     [<< 锁的本质：也是在排队 >>]
      分布式锁的机制：类似于防重表,把防重并发放到了缓存中。
 
 5-4. 对外提供的API如何保证幂等
@@ -151,3 +152,14 @@ TOKEN机制的弊端
 [一口气说出8种幂等性解决重复提交的方案，面试官懵了！(附代码)](https://mp.weixin.qq.com/s/bo0CFj0FRT74qUXQEucOxQ)
 
 [微服务架构之幂等性问题及设计思想](https://mp.weixin.qq.com/s/DXqT6aEgTbLjsthxtbg2sg)
+
+★★★结合具体场景的一些分析
+[接口幂等性这么重要，它是什么？怎么实现？](https://cloud.tencent.com/developer/article/1511743)
+
+★★★ 这两篇博文总结的非常好,深入到具体的业务场景中通过伪代码进行说明
+[如何避免下重复订单](https://www.jianshu.com/p/e618cc818432)
+[关于接口幂等性的总结](https://www.jianshu.com/p/6eba27f8fb03)
+
+
+★★★ 美团分享
+[分布式系统互斥性与幂等性问题的分析与解决](https://tech.meituan.com/2016/09/29/distributed-system-mutually-exclusive-idempotence-cerberus-gtis.html)

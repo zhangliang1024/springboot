@@ -7,8 +7,8 @@
 
 | 模块名称 | 模块介绍 | 备注 |
 | -------- | -------- | ---- |
-| `springboot-actuator`      | springboot 监控端点 \ 策略模式实现      |   |
-| `springboot-aop`           | 基于url的幂等方案  \ 幂等方案总结    |   |
+| `springboot-actuator`      | springboot 监控端点、策略模式实现      |   |
+| `springboot-aop`           | 基于url的幂等方案、幂等方案总结    |   |
 | `springboot-api-mideng`    | 基于注解+拦截+TOKEN的幂等方案      |   |
 | `springboot-api-ui`        | springboot使用Knife4j代替swagger做接口文档      |   |
 | `springboot-async`         | springboot使用自定义线程池处理异常任务      |   |
@@ -16,7 +16,7 @@
 | `springboot-configuration-properties` | springboot中@ConfigurationProperties注解使用      |   |
 | `springboot-consumer`      | springboot rabbitmq消费端      |   |
 | `springboot-custom-starter` | springboot 自定义starter      |   |
-| `springboot-date`           | springboot 基于注解实现全局日期格式化,处理精度丢失问题      |   |
+| `springboot-date`           | springboot 基于注解实现全局日期格式化,处理精度丢失问题。Java8 LocalDate      |   |
 | `springboot-dingding`       | springboot异常消息钉钉通知      |   |
 | `springboot-druid`          | springboot durid的使用      |   |
 | `springboot-dynamic-datasource` | springboot动态数据源切换      |   |
@@ -59,10 +59,11 @@
 | `springboot-sentinel`      | sentinel 学习 |   |
 | `springboot-transaction`      | springboot 声明式事务 |   |
 | `springboot-two-cache`      | ConcurrentHashMap+redis 实现一二级缓存，并通过redis实现分布式环境中，缓存的同步刷新 |   |
-| `springboot-two-cache-again`      | 自定义注解+ehcache+redis 实现二级缓存 |   |
+| `springboot-two-cache-again`      | 自定义注解+ehcache+redis 实现二级缓存 | ★★★  |
 | `springboot-utils`      | 工具类 |   |
 | `springboot-validator`      | 使用`Validator` 优雅处理参数校验、异常等 |   |
 | `springboot-zookeeper`      | zookeeper 使用 |   |
+| `springboot-request-response-wrapper`      | warpper、advice的使用: 参数校验、加解密、日志... |   |
 
 
 

@@ -1,0 +1,14 @@
+POST http://localhost:8080/advice/hello1
+Content-Type: application/json
+
+{"name":"hello"}
+
+###
+GET http://localhost:8080/advice/hello2?name=vvv
+Cache-Control: no-cache
+skip-once-secure: true
+
+
+
+###
+

@@ -1,5 +1,8 @@
 # Strategy 策略模式
 
+### 二、埋点
+[micrometer埋点（Spring boot 2.X metrics）](https://www.jianshu.com/p/082571330190)
+
 ### 三、Strategy 策略模式
 > 策略+工厂 优化if-else
 

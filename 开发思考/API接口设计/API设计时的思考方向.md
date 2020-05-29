@@ -11,3 +11,11 @@
 > - TPS、并发数、响应时长
 
 
+
+
+
+### 七、参考文档
+[API设计思考与实践](https://www.jianshu.com/p/2fd232980f9b)
+[人人都是 API 设计师：我对 RESTful API、GraphQL、RPC API 的思考](https://my.oschina.net/u/3789577/blog/3050611?_from=gitee_rec)
+[阿里研究员谷朴：API 设计最佳实践的思考](https://blog.csdn.net/yunqiinsight/article/details/85335968)
+[人人都是 API 设计者：我对 RESTful API、GraphQL、RPC API 的思考](https://blog.csdn.net/zl1zl2zl3/article/details/90311390)
