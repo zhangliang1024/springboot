@@ -18,20 +18,26 @@ StringUtils.EMPTY;
 `Springboot` 优雅处理返回和异常处理:
 
 [springboot之全局异常拦截器](https://blog.csdn.net/qq_36922927/article/details/82026683)
+
 [Springboot项目统一异常处理-404](https://blog.csdn.net/u014229347/article/details/93183143)
 
 [如何设计API接口，实现统一格式返回？](https://www.toutiao.com/i6694404645827117572/)
+
 [如何设计API接口，实现统一格式返回](https://www.jianshu.com/p/2b875befb1d8)
+
 ★★★
+
 [分布式之API接口返回格式如何优雅设计？](https://www.codercto.com/a/79710.html)
 
 [Spring Boot实战系列(4)统一异常处理](https://www.imooc.com/article/260354)
+
 [Spring Boot实战系列](https://www.imooc.com/u/2667395/articles?label_id=62)
 
 
 
 **`ResponseBodyAdvice `和 `@ControllerAdvice`**
 [如何设计API接口，实现统一格式返回？](https://www.toutiao.com/i6694404645827117572/)
+
 [掌握@ControllerAdvice配合RequestBodyAdvice/ResponseBodyAdvice使用，让你的选择不仅仅只有拦截器【享学Spring MVC】](https://blog.csdn.net/f641385712/article/details/101396307)
 
 
@@ -62,8 +68,11 @@ StringUtils.EMPTY;
 ★★★  **`牛逼`**
 项目实践 `SpringBoot`三招组合拳
 从思路到实现，可以说是很全的一套服务端开发规范模板
+
 [项目实践 SpringBoot三招组合拳，手把手教你打出优雅的后端接口](https://www.jianshu.com/p/b5b8613769db)
+
 [项目实践 后端接口统一规范的同时，如何优雅得扩展规范](https://www.jianshu.com/p/ecc41e873fe3)
+
 [GitHub 仓库地址](https://github.com/RudeCrab/rude-java)
 
 
@@ -100,9 +109,15 @@ ServiceException 异常又分为：
 
 #### 3. 参考文档
 [干掉 try catch](https://mp.weixin.qq.com/s/zdwHINfGng5ffv8L46iETw)
+
 [干掉 try catch ！](https://blog.csdn.net/xcbeyond/article/details/105872632)
+
 [Java生鲜电商平台-统一异常处理及架构实战](https://www.cnblogs.com/jurendage/p/11255197.html)
+
 [Java生鲜电商平台-缓存架构实战](https://www.cnblogs.com/jurendage/p/11269241.html)
+
 ★★★ 好像是原作者 
+
 [统一异常处理介绍及实战](https://www.jianshu.com/p/3f3d9e8d1efa)
+
 [GitHub仓库](https://github.com/sprainkle/spring-cloud-advance)
