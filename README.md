@@ -64,6 +64,7 @@
 | `springboot-validator`      | 使用`Validator` 优雅处理参数校验、异常等 |   |
 | `springboot-zookeeper`      | zookeeper 使用 |   |
 | `springboot-request-response-wrapper`      | warpper、advice的使用: 参数校验、加解密、日志... |   |
+| `springboot-log-wxchart-dingtalk`      | 线上日志告警-推送钉钉\企业微信 |   |
 
 
 

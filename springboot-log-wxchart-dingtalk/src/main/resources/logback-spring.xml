@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 此xml在spring-boot-1.5.3.RELEASE.jar里 -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    <!-- 开启后可以通过jmx动态控制日志级别(springboot Admin的功能) -->
+    <!--<jmxConfigurator/>-->
+
+    <!-- name的值是变量的名称，value的值时变量定义的值。通过定义的值会被插入到logger上下文中。定义后，可以使“${}”来使用变量。 -->
+    <property name="log.path" value="logs/"/>
+    <property name="file.name" value="springboot-log/"/>
+
+    <!-- 定义日志记录的固定格式 -->
+    <property name="LOG_INFO_STYLE" value="[timi:] %d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+    <!-- 彩色日志格式 -->
+    <property name="CONSOLE_LOG_PATTERN" value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+
+    <!--从配置文件中取属性值-->
+    <springProperty scope="context" name="profile" source="spring.profiles.active"/>
+    <springProperty scope="context" name="appName" source="spring.application.name"/>
+
+
+    <appender name="DING-TALK" class="com.meeruu.dingtalk.DingTalkAppender">
+        <!--输出格式-->
+        <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%c%L] -%-5level [%thread] %msg%n</pattern>
+        <!--钉钉机器人token-->
+        <dingdingToken>0f52674155c92f64978a4bfc11343a95430d5f42380eb741d0a06d17d4d3bb0a</dingdingToken>
+        <appName>${appName}</appName>
+        <env>${profile}</env>
+    </appender>
+
+    <appender name="WXCHART-TALK" class="com.open.WxAppender">
+        <!--输出格式-->
+        <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%c%L] -%-5level [%thread] %msg%n</pattern>
+        <!--企业微信机器人token-->
+        <wxKey>a53529c8-8613-403f-9634-255462fb5f22</wxKey>
+        <appName>${appName}</appName>
+        <env>${profile}</env>
+    </appender>
+
+    <!--1. 输出到控制台-->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <encoder>
+            <Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+            <!-- 设置字符集 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+
+    <!--定义loggers，只有定义了logger并引入appender，appender才会生效-->
+    <!--建立一个默认的root的logger-->
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="DING-TALK"/>
+        <appender-ref ref="WXCHART-TALK"/>
+    </root>
+
+</configuration>

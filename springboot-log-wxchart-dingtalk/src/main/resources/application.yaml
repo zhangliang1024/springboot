@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: springboot-log-robot
+  profiles:
+    active: local
+
+
+---
+spring:
+  profiles: local
+server:
+  port: 8081
+
+
+---
+spring:
+  profiles: test
+server:
+   port: 8082
