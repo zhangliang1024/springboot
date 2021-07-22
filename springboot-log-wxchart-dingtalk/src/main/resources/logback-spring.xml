@@ -24,7 +24,7 @@
         <!--输出格式-->
         <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%c%L] -%-5level [%thread] %msg%n</pattern>
         <!--钉钉机器人token-->
-        <dingdingToken>0f52674155c92f64978a4bfc11343a95430d5f42380eb741d0a06d17d4d3bb0a</dingdingToken>
+        <dingdingToken>0f52674155c92f6xxxxxxd0a06d17d4d3bb0a</dingdingToken>
         <appName>${appName}</appName>
         <env>${profile}</env>
     </appender>
@@ -33,7 +33,7 @@
         <!--输出格式-->
         <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%c%L] -%-5level [%thread] %msg%n</pattern>
         <!--企业微信机器人token-->
-        <wxKey>a53529c8-8613-403f-9634-255462fb5f22</wxKey>
+        <wxKey>a53529c8-xxxx-255462fb5f22</wxKey>
         <appName>${appName}</appName>
         <env>${profile}</env>
     </appender>
