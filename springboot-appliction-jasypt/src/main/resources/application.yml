@@ -1,0 +1,5 @@
+
+# jasypt加密的密匙
+jasypt:
+  encryptor:
+    password: Y6M9fAJQdU7jNp5MW

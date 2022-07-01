@@ -24,6 +24,17 @@
         在有效的600秒(10分钟)内，如果连续120秒(2分钟)未访问缓存，则缓存失效。
         就算有访问，也只会存活600秒。
      -->
-    <defaultCache maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="true"/>
-    <cache name="myCache" maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="120" timeToLiveSeconds="600" overflowToDisk="true"/>
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="600"
+            timeToLiveSeconds="600"
+            overflowToDisk="true"/>
+
+    <cache name="myCache"
+           maxElementsInMemory="10000"
+           eternal="false"
+           timeToIdleSeconds="120"
+           timeToLiveSeconds="600"
+           overflowToDisk="true"/>
 </ehcache>

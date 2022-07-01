@@ -44,7 +44,8 @@ StringUtils.EMPTY;
 
 ### 三、项目开发中对于`空`的处理
 [Java中如何更优雅的处理空值](https://www.cnblogs.com/niudaben/p/11897961.html)
-
+对于项目中如何处理常量
+[可别在代码中写那么多魔法值了，脑壳疼！](https://www.jianshu.com/p/230c814ffe7d)
 
 
 ### 四、代码优雅实现的开源项目

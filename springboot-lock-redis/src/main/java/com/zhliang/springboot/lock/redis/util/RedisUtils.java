@@ -23,8 +23,7 @@ public class RedisUtils {
             if (jedis == null) {
                 return false;
             }
-            return jedis.set(key, val, "NX", "PX", 1000 * 60).
-                    equalsIgnoreCase("ok");
+            return jedis.set(key, val, "NX", "PX", 1000 * 60).equalsIgnoreCase("ok");
         } catch (Exception ex) {
         } finally {
             if (jedis != null) {

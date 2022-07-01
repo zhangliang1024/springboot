@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: springboot-log4j2
+
+logging:
+#  config: log4j2-spring.xml
+  level:
+    com.zhliang.springboot.log4j2: debug
+server:
+  port: 8081

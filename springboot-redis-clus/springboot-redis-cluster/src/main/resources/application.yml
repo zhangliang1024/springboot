@@ -4,17 +4,39 @@ server:
 
 spring:
   application:
-    name: springboot-redis-message
+    name: springboot-redis-cluster
   # redis  配置
+  # redis
   redis:
-    host: localhost
-    port: 6379
     database: 0
-    timeout: 500ms
-    lettuce:
-      pool:
-        max-active: 8
-        min-idle: 0
-        max-idle: 8
-        max-wait: -1ms
-
+    # 单节点
+    host: 10.0.17.40
+    port: 6379
+    # 集群哨兵模式
+    #sentinel:
+    #  master: sentinel-10.252.74.10-6386
+    #  nodes:
+    #    - 10.252.74.7:6386
+    #    - 10.252.74.8:6391
+    #    - 10.252.74.9:6387
+    password: Pssd1@wqe2
+    # 配置
+    timeout: 1000
+    pool:
+      # 连接池最大连接数（使用负值表示没有限制）
+      max-active: 8
+      # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+      max-wait: -1
+      # 连接池中的最大空闲连接 默认 8
+      max-idle: 8
+      # 连接池中的最小空闲连接 默认 0
+      min-idle: 0
+    cluster:
+      nodes:
+        - localhost:7379
+        - localhost:7380
+        - localhost:7381
+        - localhost:7379
+        - localhost:7379
+        - localhost:7379
+      max-redirects: 1

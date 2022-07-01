@@ -50,9 +50,11 @@ public class LocalDateUtil {
         //plusMin();
 
 
-        calculate();
-        format();
-        parse();
+        //calculate();
+        //format();
+        //parse();
+
+        test();
     }
 
     //默认：Fri May 29 10:31:21 CST 2020
@@ -244,5 +246,28 @@ public class LocalDateUtil {
         //2019-09-10
         LocalDate localDate2 = LocalDate.parse("2019-09-10", DateTimeFormatter.ISO_LOCAL_DATE);
         System.out.println("用系统格式解析：" + localDate1);
+    }
+
+    public static void test(){
+        Clock utcClock = Clock.systemUTC();
+        Clock defaultClock = Clock.systemDefaultZone();
+        Clock offsetClock = Clock.offset(Clock.systemUTC(), Duration.ofHours(-5));
+
+        ZoneId denverTimeZone = ZoneId.of("America/Denver");
+        ZoneId newYorkTimeZone = ZoneId.of("America/New_York");
+        ZoneId chicagoTimeZone = ZoneId.of("America/Chicago");
+        ZoneId losAngelesTimeZone = ZoneId.of("America/Los_Angeles");
+
+        Instant instant = Instant.now(defaultClock);
+        Instant instant2 = Instant.now(utcClock);
+        Instant instant3 = Instant.now(offsetClock);
+
+        System.out.println(instant);
+        System.out.println(instant2);
+        System.out.println(instant3.plus(Duration.ofSeconds(90)));
+        System.out.println(instant3.atZone(newYorkTimeZone));
+        System.out.println(instant3.atZone(chicagoTimeZone));
+        System.out.println(instant3.atZone(denverTimeZone));
+        System.out.println(instant3.atZone(losAngelesTimeZone));
     }
 }

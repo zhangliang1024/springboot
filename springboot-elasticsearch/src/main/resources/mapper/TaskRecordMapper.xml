@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhliang.springboot.elasticsearch.mapper.TaskRecordMapper">
+
+    <resultMap type="com.zhliang.springboot.elasticsearch.entity.TaskRecord" id="CWfTaskRecordMap">
+        <result property="id" column="ID" jdbcType="VARCHAR"/>
+        <result property="taskNo" column="TASK_NO" jdbcType="VARCHAR"/>
+        <result property="reportNo" column="REPORT_NO" jdbcType="VARCHAR"/>
+        <result property="caseNo" column="CASE_NO" jdbcType="VARCHAR"/>
+        <result property="licenseNo" column="LICENSE_NO" jdbcType="VARCHAR"/>
+        <result property="preTaskId" column="PRE_TASK_ID" jdbcType="VARCHAR"/>
+        <result property="lossName" column="LOSS_NAME" jdbcType="VARCHAR"/>
+        <result property="taskType" column="TASK_TYPE" jdbcType="VARCHAR"/>
+        <result property="taskClass" column="TASK_CLASS" jdbcType="VARCHAR"/>
+        <result property="taskStatus" column="TASK_STATUS" jdbcType="VARCHAR"/>
+        <result property="evalType" column="EVAL_TYPE" jdbcType="VARCHAR"/>
+        <result property="callSign" column="CALL_SIGN" jdbcType="VARCHAR"/>
+        <result property="childStatus" column="CHILD_STATUS" jdbcType="VARCHAR"/>
+        <result property="otherPlaceDamage" column="OTHER_PLACE_DAMAGE" jdbcType="VARCHAR"/>
+        <result property="lockStatus" column="LOCK_STATUS" jdbcType="VARCHAR"/>
+        <result property="receiveStatus" column="RECEIVE_STATUS" jdbcType="VARCHAR"/>
+        <result property="trustFlag" column="TRUST_FLAG" jdbcType="VARCHAR"/>
+        <result property="urgentStatus" column="URGENT_STATUS" jdbcType="VARCHAR"/>
+        <result property="policyNos" column="POLICY_NOS" jdbcType="VARCHAR"/>
+        <result property="insuredName" column="INSURED_NAME" jdbcType="VARCHAR"/>
+        <result property="comCode" column="COM_CODE" jdbcType="VARCHAR"/>
+        <result property="comName" column="COM_NAME" jdbcType="VARCHAR"/>
+        <result property="claimDoingInsCode" column="CLAIM_DOING_INS_CODE" jdbcType="VARCHAR"/>
+        <result property="dispatchTaskId" column="DISPATCH_TASK_ID" jdbcType="VARCHAR"/>
+        <result property="doUserNo" column="DO_USER_NO" jdbcType="VARCHAR"/>
+        <result property="doUserName" column="DO_USER_NAME" jdbcType="VARCHAR"/>
+        <result property="doUserPhone" column="DO_USER_PHONE" jdbcType="VARCHAR"/>
+        <result property="doGroupNo" column="DO_GROUP_NO" jdbcType="VARCHAR"/>
+        <result property="doGroupName" column="DO_GROUP_NAME" jdbcType="VARCHAR"/>
+        <result property="doCompanyCode" column="DO_COMPANY_CODE" jdbcType="VARCHAR"/>
+        <result property="doCompanyName" column="DO_COMPANY_NAME" jdbcType="VARCHAR"/>
+        <result property="intoTime" column="INTO_TIME" jdbcType="TIMESTAMP"/>
+        <result property="doTime" column="DO_TIME" jdbcType="TIMESTAMP"/>
+        <result property="finishedTime" column="FINISHED_TIME" jdbcType="TIMESTAMP"/>
+        <result property="gradeId" column="GRADE_ID" jdbcType="VARCHAR"/>
+        <result property="gradeName" column="GRADE_NAME" jdbcType="VARCHAR"/>
+        <result property="gradeValue" column="GRADE_VALUE" jdbcType="VARCHAR"/>
+        <result property="delFlag" column="DEL_FLAG" jdbcType="VARCHAR"/>
+        <result property="createUserId" column="CREATE_USER_ID" jdbcType="VARCHAR"/>
+        <result property="createUserName" column="CREATE_USER_NAME" jdbcType="VARCHAR"/>
+        <result property="createTime" column="CREATE_TIME" jdbcType="TIMESTAMP"/>
+        <result property="updateUserId" column="UPDATE_USER_ID" jdbcType="VARCHAR"/>
+        <result property="updateUserName" column="UPDATE_USER_NAME" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="UPDATE_TIME" jdbcType="TIMESTAMP"/>
+        <result property="damageDate" column="DAMAGE_DATE" jdbcType="TIMESTAMP"/>
+        <result property="reportDate" column="REPORT_DATE" jdbcType="TIMESTAMP"/>
+        <result property="insuranceCode" column="INSURANCE_CODE" jdbcType="VARCHAR"/>
+        <result property="insuranceName" column="INSURANCE_NAME" jdbcType="VARCHAR"/>
+        <result property="reasonCode" column="REASON_CODE" jdbcType="VARCHAR"/>
+        <result property="reasonName" column="REASON_NAME" jdbcType="VARCHAR"/>
+        <result property="batchNumber" column="BATCH_NUMBER" jdbcType="INTEGER"/>
+        <result property="reopenNumber" column="REOPEN_NUMBER" jdbcType="INTEGER"/>
+        <result property="caseNature" column="CASE_NATURE" jdbcType="VARCHAR"/>
+        <result property="claimMoney" column="CLAIM_MONEY" jdbcType="NUMERIC"/>
+        <result property="provinceCode" column="PROVINCE_CODE" jdbcType="VARCHAR"/>
+        <result property="cityCode" column="CITY_CODE" jdbcType="VARCHAR"/>
+        <result property="areaCode" column="AREA_CODE" jdbcType="VARCHAR"/>
+        <result property="detailedAddress" column="DETAILED_ADDRESS" jdbcType="VARCHAR"/>
+        <result property="involvedCarId" column="INVOLVED_CAR_ID" jdbcType="VARCHAR"/>
+        <result property="validState" column="VALID_STATE" jdbcType="VARCHAR"/>
+        <result property="vinNo" column="VIN_NO" jdbcType="VARCHAR"/>
+        <result property="engineNo" column="ENGINE_NO" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="CWfTaskRecordMap">
+        select
+        ID, TASK_NO, REPORT_NO, CASE_NO, LICENSE_NO, PRE_TASK_ID, LOSS_NAME, TASK_TYPE, TASK_CLASS, TASK_STATUS, EVAL_TYPE, CALL_SIGN, CHILD_STATUS, OTHER_PLACE_DAMAGE, LOCK_STATUS, RECEIVE_STATUS, TRUST_FLAG, URGENT_STATUS, POLICY_NOS, INSURED_NAME, COM_CODE, COM_NAME, CLAIM_DOING_INS_CODE, DISPATCH_TASK_ID, DO_USER_NO, DO_USER_NAME, DO_USER_PHONE, DO_GROUP_NO, DO_GROUP_NAME, DO_COMPANY_CODE, DO_COMPANY_NAME, INTO_TIME, DO_TIME, FINISHED_TIME, GRADE_ID, GRADE_NAME, GRADE_VALUE, DEL_FLAG, CREATE_USER_ID, CREATE_USER_NAME, CREATE_TIME, UPDATE_USER_ID, UPDATE_USER_NAME, UPDATE_TIME, DAMAGE_DATE, REPORT_DATE, INSURANCE_CODE, INSURANCE_NAME, REASON_CODE, REASON_NAME, BATCH_NUMBER, REOPEN_NUMBER, CASE_NATURE, CLAIM_MONEY, PROVINCE_CODE, CITY_CODE, AREA_CODE, DETAILED_ADDRESS, INVOLVED_CAR_ID, VALID_STATE, VIN_NO, ENGINE_NO
+        from claim_common.c_wf_task_record
+        where ID = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="CWfTaskRecordMap">
+        select
+        ID, TASK_NO, REPORT_NO, CASE_NO, LICENSE_NO, PRE_TASK_ID, LOSS_NAME, TASK_TYPE, TASK_CLASS, TASK_STATUS, EVAL_TYPE, CALL_SIGN, CHILD_STATUS, OTHER_PLACE_DAMAGE, LOCK_STATUS, RECEIVE_STATUS, TRUST_FLAG, URGENT_STATUS, POLICY_NOS, INSURED_NAME, COM_CODE, COM_NAME, CLAIM_DOING_INS_CODE, DISPATCH_TASK_ID, DO_USER_NO, DO_USER_NAME, DO_USER_PHONE, DO_GROUP_NO, DO_GROUP_NAME, DO_COMPANY_CODE, DO_COMPANY_NAME, INTO_TIME, DO_TIME, FINISHED_TIME, GRADE_ID, GRADE_NAME, GRADE_VALUE, DEL_FLAG, CREATE_USER_ID, CREATE_USER_NAME, CREATE_TIME, UPDATE_USER_ID, UPDATE_USER_NAME, UPDATE_TIME, DAMAGE_DATE, REPORT_DATE, INSURANCE_CODE, INSURANCE_NAME, REASON_CODE, REASON_NAME, BATCH_NUMBER, REOPEN_NUMBER, CASE_NATURE, CLAIM_MONEY, PROVINCE_CODE, CITY_CODE, AREA_CODE, DETAILED_ADDRESS, INVOLVED_CAR_ID, VALID_STATE, VIN_NO, ENGINE_NO
+        from claim_common.c_wf_task_record
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="CWfTaskRecordMap">
+        select
+        ID, TASK_NO, REPORT_NO, CASE_NO, LICENSE_NO, PRE_TASK_ID, LOSS_NAME, TASK_TYPE, TASK_CLASS, TASK_STATUS, EVAL_TYPE, CALL_SIGN, CHILD_STATUS, OTHER_PLACE_DAMAGE, LOCK_STATUS, RECEIVE_STATUS, TRUST_FLAG, URGENT_STATUS, POLICY_NOS, INSURED_NAME, COM_CODE, COM_NAME, CLAIM_DOING_INS_CODE, DISPATCH_TASK_ID, DO_USER_NO, DO_USER_NAME, DO_USER_PHONE, DO_GROUP_NO, DO_GROUP_NAME, DO_COMPANY_CODE, DO_COMPANY_NAME, INTO_TIME, DO_TIME, FINISHED_TIME, GRADE_ID, GRADE_NAME, GRADE_VALUE, DEL_FLAG, CREATE_USER_ID, CREATE_USER_NAME, CREATE_TIME, UPDATE_USER_ID, UPDATE_USER_NAME, UPDATE_TIME, DAMAGE_DATE, REPORT_DATE, INSURANCE_CODE, INSURANCE_NAME, REASON_CODE, REASON_NAME, BATCH_NUMBER, REOPEN_NUMBER, CASE_NATURE, CLAIM_MONEY, PROVINCE_CODE, CITY_CODE, AREA_CODE, DETAILED_ADDRESS, INVOLVED_CAR_ID, VALID_STATE, VIN_NO, ENGINE_NO
+        from claim_common.c_wf_task_record
+        <where>
+            <if test="id != null and id != ''">
+                and ID = #{id}
+            </if>
+            <if test="taskNo != null and taskNo != ''">
+                and TASK_NO = #{taskNo}
+            </if>
+            <if test="reportNo != null and reportNo != ''">
+                and REPORT_NO = #{reportNo}
+            </if>
+            <if test="caseNo != null and caseNo != ''">
+                and CASE_NO = #{caseNo}
+            </if>
+            <if test="licenseNo != null and licenseNo != ''">
+                and LICENSE_NO = #{licenseNo}
+            </if>
+            <if test="preTaskId != null and preTaskId != ''">
+                and PRE_TASK_ID = #{preTaskId}
+            </if>
+            <if test="lossName != null and lossName != ''">
+                and LOSS_NAME = #{lossName}
+            </if>
+            <if test="taskType != null and taskType != ''">
+                and TASK_TYPE = #{taskType}
+            </if>
+            <if test="taskClass != null and taskClass != ''">
+                and TASK_CLASS = #{taskClass}
+            </if>
+            <if test="taskStatus != null and taskStatus != ''">
+                and TASK_STATUS = #{taskStatus}
+            </if>
+            <if test="evalType != null and evalType != ''">
+                and EVAL_TYPE = #{evalType}
+            </if>
+            <if test="callSign != null and callSign != ''">
+                and CALL_SIGN = #{callSign}
+            </if>
+            <if test="childStatus != null and childStatus != ''">
+                and CHILD_STATUS = #{childStatus}
+            </if>
+            <if test="otherPlaceDamage != null and otherPlaceDamage != ''">
+                and OTHER_PLACE_DAMAGE = #{otherPlaceDamage}
+            </if>
+            <if test="lockStatus != null and lockStatus != ''">
+                and LOCK_STATUS = #{lockStatus}
+            </if>
+            <if test="receiveStatus != null and receiveStatus != ''">
+                and RECEIVE_STATUS = #{receiveStatus}
+            </if>
+            <if test="trustFlag != null and trustFlag != ''">
+                and TRUST_FLAG = #{trustFlag}
+            </if>
+            <if test="urgentStatus != null and urgentStatus != ''">
+                and URGENT_STATUS = #{urgentStatus}
+            </if>
+            <if test="policyNos != null and policyNos != ''">
+                and POLICY_NOS = #{policyNos}
+            </if>
+            <if test="insuredName != null and insuredName != ''">
+                and INSURED_NAME = #{insuredName}
+            </if>
+            <if test="comCode != null and comCode != ''">
+                and COM_CODE = #{comCode}
+            </if>
+            <if test="comName != null and comName != ''">
+                and COM_NAME = #{comName}
+            </if>
+            <if test="claimDoingInsCode != null and claimDoingInsCode != ''">
+                and CLAIM_DOING_INS_CODE = #{claimDoingInsCode}
+            </if>
+            <if test="dispatchTaskId != null and dispatchTaskId != ''">
+                and DISPATCH_TASK_ID = #{dispatchTaskId}
+            </if>
+            <if test="doUserNo != null and doUserNo != ''">
+                and DO_USER_NO = #{doUserNo}
+            </if>
+            <if test="doUserName != null and doUserName != ''">
+                and DO_USER_NAME = #{doUserName}
+            </if>
+            <if test="doUserPhone != null and doUserPhone != ''">
+                and DO_USER_PHONE = #{doUserPhone}
+            </if>
+            <if test="doGroupNo != null and doGroupNo != ''">
+                and DO_GROUP_NO = #{doGroupNo}
+            </if>
+            <if test="doGroupName != null and doGroupName != ''">
+                and DO_GROUP_NAME = #{doGroupName}
+            </if>
+            <if test="doCompanyCode != null and doCompanyCode != ''">
+                and DO_COMPANY_CODE = #{doCompanyCode}
+            </if>
+            <if test="doCompanyName != null and doCompanyName != ''">
+                and DO_COMPANY_NAME = #{doCompanyName}
+            </if>
+            <if test="intoTime != null">
+                and INTO_TIME = #{intoTime}
+            </if>
+            <if test="doTime != null">
+                and DO_TIME = #{doTime}
+            </if>
+            <if test="finishedTime != null">
+                and FINISHED_TIME = #{finishedTime}
+            </if>
+            <if test="gradeId != null and gradeId != ''">
+                and GRADE_ID = #{gradeId}
+            </if>
+            <if test="gradeName != null and gradeName != ''">
+                and GRADE_NAME = #{gradeName}
+            </if>
+            <if test="gradeValue != null and gradeValue != ''">
+                and GRADE_VALUE = #{gradeValue}
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                and DEL_FLAG = #{delFlag}
+            </if>
+            <if test="createUserId != null and createUserId != ''">
+                and CREATE_USER_ID = #{createUserId}
+            </if>
+            <if test="createUserName != null and createUserName != ''">
+                and CREATE_USER_NAME = #{createUserName}
+            </if>
+            <if test="createTime != null">
+                and CREATE_TIME = #{createTime}
+            </if>
+            <if test="updateUserId != null and updateUserId != ''">
+                and UPDATE_USER_ID = #{updateUserId}
+            </if>
+            <if test="updateUserName != null and updateUserName != ''">
+                and UPDATE_USER_NAME = #{updateUserName}
+            </if>
+            <if test="updateTime != null">
+                and UPDATE_TIME = #{updateTime}
+            </if>
+            <if test="damageDate != null">
+                and DAMAGE_DATE = #{damageDate}
+            </if>
+            <if test="reportDate != null">
+                and REPORT_DATE = #{reportDate}
+            </if>
+            <if test="insuranceCode != null and insuranceCode != ''">
+                and INSURANCE_CODE = #{insuranceCode}
+            </if>
+            <if test="insuranceName != null and insuranceName != ''">
+                and INSURANCE_NAME = #{insuranceName}
+            </if>
+            <if test="reasonCode != null and reasonCode != ''">
+                and REASON_CODE = #{reasonCode}
+            </if>
+            <if test="reasonName != null and reasonName != ''">
+                and REASON_NAME = #{reasonName}
+            </if>
+            <if test="batchNumber != null">
+                and BATCH_NUMBER = #{batchNumber}
+            </if>
+            <if test="reopenNumber != null">
+                and REOPEN_NUMBER = #{reopenNumber}
+            </if>
+            <if test="caseNature != null and caseNature != ''">
+                and CASE_NATURE = #{caseNature}
+            </if>
+            <if test="claimMoney != null">
+                and CLAIM_MONEY = #{claimMoney}
+            </if>
+            <if test="provinceCode != null and provinceCode != ''">
+                and PROVINCE_CODE = #{provinceCode}
+            </if>
+            <if test="cityCode != null and cityCode != ''">
+                and CITY_CODE = #{cityCode}
+            </if>
+            <if test="areaCode != null and areaCode != ''">
+                and AREA_CODE = #{areaCode}
+            </if>
+            <if test="detailedAddress != null and detailedAddress != ''">
+                and DETAILED_ADDRESS = #{detailedAddress}
+            </if>
+            <if test="involvedCarId != null and involvedCarId != ''">
+                and INVOLVED_CAR_ID = #{involvedCarId}
+            </if>
+            <if test="validState != null and validState != ''">
+                and VALID_STATE = #{validState}
+            </if>
+            <if test="vinNo != null and vinNo != ''">
+                and VIN_NO = #{vinNo}
+            </if>
+            <if test="engineNo != null and engineNo != ''">
+                and ENGINE_NO = #{engineNo}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into claim_common.c_wf_task_record(TASK_NO, REPORT_NO, CASE_NO, LICENSE_NO, PRE_TASK_ID, LOSS_NAME, TASK_TYPE, TASK_CLASS, TASK_STATUS, EVAL_TYPE, CALL_SIGN, CHILD_STATUS, OTHER_PLACE_DAMAGE, LOCK_STATUS, RECEIVE_STATUS, TRUST_FLAG, URGENT_STATUS, POLICY_NOS, INSURED_NAME, COM_CODE, COM_NAME, CLAIM_DOING_INS_CODE, DISPATCH_TASK_ID, DO_USER_NO, DO_USER_NAME, DO_USER_PHONE, DO_GROUP_NO, DO_GROUP_NAME, DO_COMPANY_CODE, DO_COMPANY_NAME, INTO_TIME, DO_TIME, FINISHED_TIME, GRADE_ID, GRADE_NAME, GRADE_VALUE, DEL_FLAG, CREATE_USER_ID, CREATE_USER_NAME, CREATE_TIME, UPDATE_USER_ID, UPDATE_USER_NAME, UPDATE_TIME, DAMAGE_DATE, REPORT_DATE, INSURANCE_CODE, INSURANCE_NAME, REASON_CODE, REASON_NAME, BATCH_NUMBER, REOPEN_NUMBER, CASE_NATURE, CLAIM_MONEY, PROVINCE_CODE, CITY_CODE, AREA_CODE, DETAILED_ADDRESS, INVOLVED_CAR_ID, VALID_STATE, VIN_NO, ENGINE_NO)
+        values (#{taskNo}, #{reportNo}, #{caseNo}, #{licenseNo}, #{preTaskId}, #{lossName}, #{taskType}, #{taskClass}, #{taskStatus}, #{evalType}, #{callSign}, #{childStatus}, #{otherPlaceDamage}, #{lockStatus}, #{receiveStatus}, #{trustFlag}, #{urgentStatus}, #{policyNos}, #{insuredName}, #{comCode}, #{comName}, #{claimDoingInsCode}, #{dispatchTaskId}, #{doUserNo}, #{doUserName}, #{doUserPhone}, #{doGroupNo}, #{doGroupName}, #{doCompanyCode}, #{doCompanyName}, #{intoTime}, #{doTime}, #{finishedTime}, #{gradeId}, #{gradeName}, #{gradeValue}, #{delFlag}, #{createUserId}, #{createUserName}, #{createTime}, #{updateUserId}, #{updateUserName}, #{updateTime}, #{damageDate}, #{reportDate}, #{insuranceCode}, #{insuranceName}, #{reasonCode}, #{reasonName}, #{batchNumber}, #{reopenNumber}, #{caseNature}, #{claimMoney}, #{provinceCode}, #{cityCode}, #{areaCode}, #{detailedAddress}, #{involvedCarId}, #{validState}, #{vinNo}, #{engineNo})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update claim_common.c_wf_task_record
+        <set>
+            <if test="taskNo != null and taskNo != ''">
+                TASK_NO = #{taskNo},
+            </if>
+            <if test="reportNo != null and reportNo != ''">
+                REPORT_NO = #{reportNo},
+            </if>
+            <if test="caseNo != null and caseNo != ''">
+                CASE_NO = #{caseNo},
+            </if>
+            <if test="licenseNo != null and licenseNo != ''">
+                LICENSE_NO = #{licenseNo},
+            </if>
+            <if test="preTaskId != null and preTaskId != ''">
+                PRE_TASK_ID = #{preTaskId},
+            </if>
+            <if test="lossName != null and lossName != ''">
+                LOSS_NAME = #{lossName},
+            </if>
+            <if test="taskType != null and taskType != ''">
+                TASK_TYPE = #{taskType},
+            </if>
+            <if test="taskClass != null and taskClass != ''">
+                TASK_CLASS = #{taskClass},
+            </if>
+            <if test="taskStatus != null and taskStatus != ''">
+                TASK_STATUS = #{taskStatus},
+            </if>
+            <if test="evalType != null and evalType != ''">
+                EVAL_TYPE = #{evalType},
+            </if>
+            <if test="callSign != null and callSign != ''">
+                CALL_SIGN = #{callSign},
+            </if>
+            <if test="childStatus != null and childStatus != ''">
+                CHILD_STATUS = #{childStatus},
+            </if>
+            <if test="otherPlaceDamage != null and otherPlaceDamage != ''">
+                OTHER_PLACE_DAMAGE = #{otherPlaceDamage},
+            </if>
+            <if test="lockStatus != null and lockStatus != ''">
+                LOCK_STATUS = #{lockStatus},
+            </if>
+            <if test="receiveStatus != null and receiveStatus != ''">
+                RECEIVE_STATUS = #{receiveStatus},
+            </if>
+            <if test="trustFlag != null and trustFlag != ''">
+                TRUST_FLAG = #{trustFlag},
+            </if>
+            <if test="urgentStatus != null and urgentStatus != ''">
+                URGENT_STATUS = #{urgentStatus},
+            </if>
+            <if test="policyNos != null and policyNos != ''">
+                POLICY_NOS = #{policyNos},
+            </if>
+            <if test="insuredName != null and insuredName != ''">
+                INSURED_NAME = #{insuredName},
+            </if>
+            <if test="comCode != null and comCode != ''">
+                COM_CODE = #{comCode},
+            </if>
+            <if test="comName != null and comName != ''">
+                COM_NAME = #{comName},
+            </if>
+            <if test="claimDoingInsCode != null and claimDoingInsCode != ''">
+                CLAIM_DOING_INS_CODE = #{claimDoingInsCode},
+            </if>
+            <if test="dispatchTaskId != null and dispatchTaskId != ''">
+                DISPATCH_TASK_ID = #{dispatchTaskId},
+            </if>
+            <if test="doUserNo != null and doUserNo != ''">
+                DO_USER_NO = #{doUserNo},
+            </if>
+            <if test="doUserName != null and doUserName != ''">
+                DO_USER_NAME = #{doUserName},
+            </if>
+            <if test="doUserPhone != null and doUserPhone != ''">
+                DO_USER_PHONE = #{doUserPhone},
+            </if>
+            <if test="doGroupNo != null and doGroupNo != ''">
+                DO_GROUP_NO = #{doGroupNo},
+            </if>
+            <if test="doGroupName != null and doGroupName != ''">
+                DO_GROUP_NAME = #{doGroupName},
+            </if>
+            <if test="doCompanyCode != null and doCompanyCode != ''">
+                DO_COMPANY_CODE = #{doCompanyCode},
+            </if>
+            <if test="doCompanyName != null and doCompanyName != ''">
+                DO_COMPANY_NAME = #{doCompanyName},
+            </if>
+            <if test="intoTime != null">
+                INTO_TIME = #{intoTime},
+            </if>
+            <if test="doTime != null">
+                DO_TIME = #{doTime},
+            </if>
+            <if test="finishedTime != null">
+                FINISHED_TIME = #{finishedTime},
+            </if>
+            <if test="gradeId != null and gradeId != ''">
+                GRADE_ID = #{gradeId},
+            </if>
+            <if test="gradeName != null and gradeName != ''">
+                GRADE_NAME = #{gradeName},
+            </if>
+            <if test="gradeValue != null and gradeValue != ''">
+                GRADE_VALUE = #{gradeValue},
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                DEL_FLAG = #{delFlag},
+            </if>
+            <if test="createUserId != null and createUserId != ''">
+                CREATE_USER_ID = #{createUserId},
+            </if>
+            <if test="createUserName != null and createUserName != ''">
+                CREATE_USER_NAME = #{createUserName},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME = #{createTime},
+            </if>
+            <if test="updateUserId != null and updateUserId != ''">
+                UPDATE_USER_ID = #{updateUserId},
+            </if>
+            <if test="updateUserName != null and updateUserName != ''">
+                UPDATE_USER_NAME = #{updateUserName},
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME = #{updateTime},
+            </if>
+            <if test="damageDate != null">
+                DAMAGE_DATE = #{damageDate},
+            </if>
+            <if test="reportDate != null">
+                REPORT_DATE = #{reportDate},
+            </if>
+            <if test="insuranceCode != null and insuranceCode != ''">
+                INSURANCE_CODE = #{insuranceCode},
+            </if>
+            <if test="insuranceName != null and insuranceName != ''">
+                INSURANCE_NAME = #{insuranceName},
+            </if>
+            <if test="reasonCode != null and reasonCode != ''">
+                REASON_CODE = #{reasonCode},
+            </if>
+            <if test="reasonName != null and reasonName != ''">
+                REASON_NAME = #{reasonName},
+            </if>
+            <if test="batchNumber != null">
+                BATCH_NUMBER = #{batchNumber},
+            </if>
+            <if test="reopenNumber != null">
+                REOPEN_NUMBER = #{reopenNumber},
+            </if>
+            <if test="caseNature != null and caseNature != ''">
+                CASE_NATURE = #{caseNature},
+            </if>
+            <if test="claimMoney != null">
+                CLAIM_MONEY = #{claimMoney},
+            </if>
+            <if test="provinceCode != null and provinceCode != ''">
+                PROVINCE_CODE = #{provinceCode},
+            </if>
+            <if test="cityCode != null and cityCode != ''">
+                CITY_CODE = #{cityCode},
+            </if>
+            <if test="areaCode != null and areaCode != ''">
+                AREA_CODE = #{areaCode},
+            </if>
+            <if test="detailedAddress != null and detailedAddress != ''">
+                DETAILED_ADDRESS = #{detailedAddress},
+            </if>
+            <if test="involvedCarId != null and involvedCarId != ''">
+                INVOLVED_CAR_ID = #{involvedCarId},
+            </if>
+            <if test="validState != null and validState != ''">
+                VALID_STATE = #{validState},
+            </if>
+            <if test="vinNo != null and vinNo != ''">
+                VIN_NO = #{vinNo},
+            </if>
+            <if test="engineNo != null and engineNo != ''">
+                ENGINE_NO = #{engineNo},
+            </if>
+        </set>
+        where ID = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from claim_common.c_wf_task_record where ID = #{id}
+    </delete>
+
+
+    <!--查询所有没条件-->
+    <select id="queryAllList" resultMap="CWfTaskRecordMap">
+        select
+        ID, TASK_NO, REPORT_NO, CASE_NO, LICENSE_NO, PRE_TASK_ID, LOSS_NAME, TASK_TYPE, TASK_CLASS, TASK_STATUS, EVAL_TYPE, CALL_SIGN, CHILD_STATUS, OTHER_PLACE_DAMAGE, LOCK_STATUS, RECEIVE_STATUS, TRUST_FLAG, URGENT_STATUS, POLICY_NOS, INSURED_NAME, COM_CODE, COM_NAME, CLAIM_DOING_INS_CODE, DISPATCH_TASK_ID, DO_USER_NO, DO_USER_NAME, DO_USER_PHONE, DO_GROUP_NO, DO_GROUP_NAME, DO_COMPANY_CODE, DO_COMPANY_NAME, INTO_TIME, DO_TIME, FINISHED_TIME, GRADE_ID, GRADE_NAME, GRADE_VALUE, DEL_FLAG, CREATE_USER_ID, CREATE_USER_NAME, CREATE_TIME, UPDATE_USER_ID, UPDATE_USER_NAME, UPDATE_TIME, DAMAGE_DATE, REPORT_DATE, INSURANCE_CODE, INSURANCE_NAME, REASON_CODE, REASON_NAME, BATCH_NUMBER, REOPEN_NUMBER, CASE_NATURE, CLAIM_MONEY, PROVINCE_CODE, CITY_CODE, AREA_CODE, DETAILED_ADDRESS, INVOLVED_CAR_ID, VALID_STATE, VIN_NO, ENGINE_NO
+        from claim_common.c_wf_task_record
+    </select>
+
+
+</mapper>

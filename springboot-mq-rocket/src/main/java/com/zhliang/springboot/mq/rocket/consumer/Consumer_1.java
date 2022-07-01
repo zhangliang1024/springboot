@@ -22,7 +22,7 @@ public class Consumer_1 {
     public static void main(String[] args) {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("my-group");
 
-        consumer.setNamesrvAddr("192.168.8.103:9876");
+        consumer.setNamesrvAddr("localhost:9876");
         consumer.setInstanceName("rmq-instance");
         try {
             consumer.subscribe("demo-topic", "demo-tag");

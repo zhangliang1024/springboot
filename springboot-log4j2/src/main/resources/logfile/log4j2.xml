@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN" monitorInterval="30">
+    <!--变量配置-->
+    <Properties>
+        <!-- 格式化输出：%date表示日期，HH:mm:ss.SSS表示日期格式，%thread表示线程名，%-5level表示级别从左显示5个字符宽度，
+        %C{1.}表示类全限定名输出精度，%-4L输出日志所在行行号，%msg代表日志消息，%n是换行符-->
+        <property name="LOG_PATTERN" value="%date{HH:mm:ss.SSS} [%thread] %-5level %C{1.} %-4L : %msg%n"/>
+        <!-- 定义日志存储的路径.${web:rootDir}表示当前工程目录， -->
+        <property name="FILE_PATH" value="logs"/>
+        <property name="FILE_NAME" value="springboot-log4j2"/>
+    </Properties>
+
+    <appenders>
+        <!--控制台输出-->
+        <console name="Console" target="SYSTEM_OUT">
+            <!--输出日志的格式-->
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <!--表示输出level=debug级别及以上日志（onMatch），debug级别以下不输出（onMismatch）-->
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+        </console>
+
+        <Rewrite name="rewrite">
+            <DataMaskingRewritePolicy/>
+            <AppenderRef ref="Console"/>
+        </Rewrite>
+
+        <!-- 打印出所有级别的日志信息，并自动滚动存档-->
+        <RollingFile name="AllLevelRollingFile" fileName="${FILE_PATH}/${FILE_NAME}.log"
+                     filePattern="${FILE_PATH}/${FILE_NAME}-ALL-%d{yyyy-MM-dd}_%i.log.gz">
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="ACCEPT"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <!--interval属性用来指定多久滚动一次，interval=1表示1小时滚动一次-->
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <!--size=20表示文件大于20M滚动一次-->
+                <SizeBasedTriggeringPolicy size="20MB"/>
+            </Policies>
+            <!-- max=15表示同文件夹下最多10个文件，再多则会覆盖，DefaultRolloverStrategy如不设置，则默认为7个-->
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+
+        <!-- 打印出所有error及以上级别的信息，并自动滚动存档-->
+        <RollingFile name="ErrorRollingFile" fileName="${FILE_PATH}/error.log"
+                     filePattern="${FILE_PATH}/${FILE_NAME}-ERROR-%d{yyyy-MM-dd}_%i.log.gz">
+            <!--输出level及以上级别的信息（onMatch），level以下直接拒绝（onMismatch）-->
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <!--interval属性用来指定多久滚动一次，interval=1表示1小时滚动一次-->
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <!--size=20表示文件大于20M滚动一次-->
+                <SizeBasedTriggeringPolicy size="20MB"/>
+            </Policies>
+            <!-- max=15表示同文件夹下最多10个文件，再多则会覆盖，DefaultRolloverStrategy如不设置，则默认为7个-->
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+
+    </appenders>
+
+    <!--Logger节点用来单独指定日志的形式，可以给不同包配置不同的日志打印策略。-->
+    <loggers>
+        <logger name="com.zhliang.springboot.log4j2.plugin" level="info" additivity="false">
+            <AppenderRef ref="rewrite"/>
+        </logger>
+
+        <root level="debug">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="AllLevelRollingFile"/>
+            <appender-ref ref="ErrorRollingFile"/>
+        </root>
+    </loggers>
+</configuration>

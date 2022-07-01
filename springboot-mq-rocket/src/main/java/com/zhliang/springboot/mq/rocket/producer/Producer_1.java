@@ -19,7 +19,7 @@ public class Producer_1 {
 
     public static void main(String[] args) throws MQClientException {
         DefaultMQProducer producer = new DefaultMQProducer("my-group");
-        producer.setNamesrvAddr("192.168.8.103:9876");
+        producer.setNamesrvAddr("localhost:9876");
         producer.setInstanceName("rmq-instance");
         producer.start();
         try {

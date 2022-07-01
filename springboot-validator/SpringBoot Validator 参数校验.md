@@ -283,7 +283,8 @@ public class ValidExceptionHandler {
 [项目实践 后端接口统一规范的同时，如何优雅得扩展规范](https://www.jianshu.com/p/ecc41e873fe3)
 [GitHub 仓库地址](https://github.com/RudeCrab/rude-java)
 
-
+★★★
+[不会优雅使用Spring Validation](https://mp.weixin.qq.com/s/gnvXfR0Q-vZN4ZiUgSfIog)
 
 
 ### 六、测试数据

@@ -1,5 +1,6 @@
 package com.zhliang.springboot.cache.service;
 
+import com.zhliang.springboot.cache.annotation.MyCacheable;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,12 @@ public class HelloService {
 
     @Cacheable(value = "emp" ,key = "targetClass + methodName +#p0")
     public List<String> queryAll(String str) {
+        System.out.println("====>>>> 请求进入 request: " + str);
+        return Arrays.asList("hello","world",str);
+    }
+
+    @MyCacheable(value = "emp" ,key = "#str",isSecond = true)
+    public List<String> query(String str) {
         System.out.println("====>>>> 请求进入 request: " + str);
         return Arrays.asList("hello","world",str);
     }

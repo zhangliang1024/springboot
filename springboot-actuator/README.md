@@ -9,7 +9,7 @@
 [策略模式、工厂模式代替If-else](https://blog.csdn.net/AssassinX99/article/details/102736252)
 [如何优雅的替换掉代码中的ifelse](https://blog.csdn.net/iteye_19045/article/details/103300731)
 [在Springboot中 如何干掉 if-else](https://www.jianshu.com/p/1e70918d4840)
-
+[用注解去代替if-else吧](https://www.jianshu.com/p/d55674caf6cf)
 
 ### 四、诡异的事情
 ```markdown

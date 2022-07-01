@@ -5,7 +5,9 @@ import com.zhliang.springboot.validator.group.Update;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Future;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
 
@@ -21,6 +23,7 @@ import java.util.Date;
 public class User {
 
     private Long userId;
+    @NotBlank(message = "用户昵称不能为空")
     private String username;
     private String mobile;
     private String clientCardNo;
@@ -28,4 +31,7 @@ public class User {
     private String email;
     private String password;
     private Date createTime;
+
+    @Valid
+    private Cat cat;
 }

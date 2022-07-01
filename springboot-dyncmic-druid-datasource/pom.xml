@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.0</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.zhangliang</groupId>
+    <artifactId>springboot-dyncmic-druid-datasource</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>springboot-dyncmic-druid-datasource</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.23</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- jycloud-commons -->
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-commons-util</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-commons-config</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-commons-auth</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!-- project -->
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-fmodel-indemnity-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-fmodel-indemnity-client</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-fmodel-lossass-client</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-fmodel-lossass-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!--jycloud-claim-cucontact-->
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-cucontact-client</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-cucontact-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-fmodel-lossass-client</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-fmodel-lossass-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!--jycloud-claim-thirdparty-common-->
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-thirdparty-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!--jycloud-claim-lossass-->
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-lossass-client</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-lossass-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-thirdparty-client</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!--jycloud-claim-fmodel-cucontact-client-->
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-fmodel-cucontact-client</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!--jycloud-claim-fmodel-lossass-client-->
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-fmodel-lossass-client</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!--jycloud-claim-dispatch-->
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-dispatch-client</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-dispatch-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!-- jycloud-claim-survey-common -->
+        <dependency>
+            <groupId>com.jy</groupId>
+            <artifactId>jycloud-claim-survey-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <distributionManagement>
+        <!-- repository -->
+        <repository>
+            <id>nexus-3rdParty</id>
+            <url>http://maven.chinahuanong.com.cn/repository/nuget-hosted/</url>
+        </repository>
+        <!-- snapshot repository -->
+        <snapshotRepository>
+            <id>nexus-3rdPartySnapshot</id>
+            <url>http://maven.chinahuanong.com.cn/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

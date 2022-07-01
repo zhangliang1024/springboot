@@ -14,10 +14,19 @@
 
 > 最近好像很多类似于这样的开源组件，例如阿里的 jetcache, autoload_cache等等
 
+> jeesuite-libs分布式架构开发套件
+[jeesuite-libs](https://github.com/vakinge/jeesuite-libs)
 
+[ace-cache](https://github.com/wxiaoqi/ace-cache)
 
 ★★★ `Redis` 和`Ehcache` 做一二级缓存, `zookeeper` 分布式锁更新`redis ` 缓存
 [Spring Boot 使用Redis和Ehcache做拥有二级缓存的系统](https://blog.csdn.net/u014104286/article/details/79149578)
+
+##### 问题
+> SpringBoot提供的Cacheable默认是不支持自定义过期时间的，过期时间都是统一配置。不能针对每个key来设置
+[Spring Boot缓存配置不同到期时间](https://www.jianshu.com/p/a5b453194e15)
+[Springboot缓存自定义,支持过期时间，过期方式properties文件配置](https://blog.csdn.net/zpwangshisuifeng/article/details/104991020)
+
 
 
 

@@ -1,0 +1,20 @@
+server:
+  port: 1024
+spring:
+  application:
+    name: springboot-apollo
+
+app:
+  id: ${spring.application.name}
+apollo:
+  meta: http://10.0.17.92:9080
+  bootstrap:
+    enabled: true
+    eagerLoad:
+      enabled: true
+
+
+logging:
+  level:
+    com.zhliang.springboot.apollo.controller: warn
+

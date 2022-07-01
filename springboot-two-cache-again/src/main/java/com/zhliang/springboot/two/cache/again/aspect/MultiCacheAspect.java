@@ -24,12 +24,10 @@ import org.springframework.util.StringUtils;
 import java.lang.reflect.Method;
 
 /**
- * @项目名称：springboot
- * @包名：com.zhliang.springboot.two.cache.again.aspect
  * @类描述：多级缓存切面
- * @创建人：colin
  * @创建时间：2019/12/6 14:31
- * @version：V1.0
+ * springboot中使用自定义两级缓存的方法：
+ *  https://www.jb51.net/article/140683.htm
  */
 @Aspect
 @Component

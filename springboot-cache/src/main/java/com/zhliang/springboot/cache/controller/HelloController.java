@@ -21,9 +21,13 @@ public class HelloController {
     @Autowired
     private HelloService service;
 
-
     @GetMapping("/hello/cache")
     public List<String> helloCache(String str) {
+        return service.query(str);
+    }
+
+    @GetMapping("/hello/cache/all")
+    public List<String> helloCacheAll(String str) {
         return service.queryAll(str);
     }
 

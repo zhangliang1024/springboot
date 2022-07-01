@@ -13,8 +13,11 @@ import org.springframework.http.converter.HttpMessageConverter;
 
 import java.math.BigInteger;
 import java.nio.charset.Charset;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  * @Author: colin
@@ -45,11 +48,22 @@ public class MassageConverConfiguration {
                 SerializerFeature.WriteMapNullValue,
                 SerializerFeature.WriteNullStringAsEmpty);
 
+        //FIXME 处理序列化时区问题 从es拿到数据 反序列化会增加8小时 https://github.com/alibaba/fastjson/issues/2470
+        SerializeConfig serializeConfig = new SerializeConfig();
+        serializeConfig.put(Date.class, (serializer, object, fieldName, fieldType, features) -> {
+            if (object == null) {
+                serializer.out.writeNull();
+                return;
+            }
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+            serializer.out.writeString(dateFormat.format(object));
+        });
+
         /**
          * 自定义序列化方式 Long -> String
          * 解决Long类型 精度丢失问题
          */
-        SerializeConfig serializeConfig = config.getSerializeConfig();
         serializeConfig.put(BigInteger.class, ToStringSerializer.instance);
         serializeConfig.put(Long.class,ToStringSerializer.instance);
         serializeConfig.put(Long.TYPE,ToStringSerializer.instance);
