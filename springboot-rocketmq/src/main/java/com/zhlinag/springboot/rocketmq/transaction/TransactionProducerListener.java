@@ -15,12 +15,12 @@ import org.springframework.stereotype.Component;
  * @author 张良 E-mail:zhangliang01@jingyougroup.com
  * @version V1.0.0
  *
- * 1. 生成者实现 RocketMQLocalTransactionListener接口，重写执行本地事务的方法和检查本地事务方法
- * 2. RocketMQTransactionListener注解 是一个生产端的消息监听器，徐娅萍配置监听事务消息的生产者组
+ * 1. 生产者实现 RocketMQLocalTransactionListener接口，重写执行本地事务的方法和检查本地事务方法
+ * 2. RocketMQTransactionListener注解 是一个生产端的消息监听器，需要配置监听事务消息的生产者组
  */
 @Slf4j
-//@Component
-//@RocketMQTransactionListener
+@Component
+@RocketMQTransactionListener
 public class TransactionProducerListener implements RocketMQLocalTransactionListener {
 
 

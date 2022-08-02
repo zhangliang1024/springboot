@@ -2,6 +2,7 @@ package com.zhlinag.springboot.rocketmq.transaction;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.rocketmq.client.producer.TransactionSendResult;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -21,7 +21,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * @version V1.0.0
  */
 @Slf4j
-//@Service
+@Service
 @RequiredArgsConstructor
 public class TransactionProducer {
 
@@ -34,7 +34,8 @@ public class TransactionProducer {
         map.put("name", "事务消息");
         map.put("desc", "事务消息" + i);
         Message<Map<String, String>> message = MessageBuilder.withPayload(map).setHeader("key", map.get("key")).build();
-        rocketMQTemplate.sendMessageInTransaction("tx_topic", message, i);
+        TransactionSendResult result = this.rocketMQTemplate.sendMessageInTransaction("transaction-topic", message, i);
+        log.info("Send MQ Result: {}", result);
     }
 
 }

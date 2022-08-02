@@ -1,12 +1,10 @@
-package com.zhlinag.springboot.rocketmq.general;
+package com.zhlinag.springboot.rocketmq.tag;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.spring.annotation.ConsumeMode;
 import org.apache.rocketmq.spring.annotation.MessageModel;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
-import org.apache.rocketmq.spring.core.RocketMQPushConsumerLifecycleListener;
 import org.springframework.stereotype.Component;
 
 /**
@@ -22,11 +20,11 @@ import org.springframework.stereotype.Component;
 @RocketMQMessageListener(
         topic = "general-topic",                  // 主题
         consumeMode = ConsumeMode.CONCURRENTLY,   // 消费类型 普通 顺序
-        selectorExpression = "*",                 // 指定TAG 支持表达式  默认：*
+        selectorExpression = "tag",               // 指定TAG 支持表达式  默认：*
         messageModel = MessageModel.CLUSTERING,   // 消费模式：集群 广播  默认：集群
         consumerGroup = "springboot-rocketmq"     // 消费者组
 )
-public class GeneralConsumer implements RocketMQListener<String>, RocketMQPushConsumerLifecycleListener {
+public class TagConsumer implements RocketMQListener<String> {
 
     /**
      * 1. 集群消费模式中：同一个topic下，相同的consumerGroup中只会有一个Consumer收到消息，进行消费
@@ -34,13 +32,5 @@ public class GeneralConsumer implements RocketMQListener<String>, RocketMQPushCo
     @Override
     public void onMessage(String message) {
         log.info("接收到消息: [{}]", message);
-    }
-
-    @Override
-    public void prepareStart(DefaultMQPushConsumer consumer) {
-        // 设置最大重试次数
-        consumer.setMaxReconsumeTimes(5);
-        // 如下，设置其它consumer相关属性
-        consumer.setPullBatchSize(16);
     }
 }

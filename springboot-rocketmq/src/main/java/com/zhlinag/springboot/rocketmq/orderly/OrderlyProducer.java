@@ -28,5 +28,4 @@ public class OrderlyProducer {
             log.info("Send Orderly Message Result: [{}]", JSON.toJSONString(result));
         }
     }
-
 }

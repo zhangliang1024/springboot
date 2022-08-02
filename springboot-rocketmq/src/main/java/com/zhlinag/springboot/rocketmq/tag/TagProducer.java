@@ -1,4 +1,4 @@
-package com.zhlinag.springboot.rocketmq.general;
+package com.zhlinag.springboot.rocketmq.tag;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,12 +17,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class GeneralProducer {
+public class TagProducer {
 
     private final RocketMQTemplate rocketMQTemplate;
 
-    public void sendGeneralMessage() {
-        SendResult result = this.rocketMQTemplate.syncSend("general-topic", "普通消费");
+    public void sendTagMessage() {
+        SendResult result = this.rocketMQTemplate.syncSend("general-topic:tag", "标签消费");
         log.info("Send MQ result: {}", result);
     }
 }

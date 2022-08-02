@@ -1,0 +1,10 @@
+# Minio配置
+minio:
+  # minio配置的地址，端口9000
+  url: http://192.168.31.2:9000
+  # 账号
+  accessKey: minioadmin
+  # 密码
+  secretKey: minioadmin
+  # MinIO桶名字
+  bucketName: test-bucket
