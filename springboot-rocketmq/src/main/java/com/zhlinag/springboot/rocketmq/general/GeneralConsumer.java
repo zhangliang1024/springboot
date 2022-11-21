@@ -42,5 +42,13 @@ public class GeneralConsumer implements RocketMQListener<String>, RocketMQPushCo
         consumer.setMaxReconsumeTimes(5);
         // 如下，设置其它consumer相关属性
         consumer.setPullBatchSize(16);
+
+        // 提高 Consumer 的消费能力
+        // 1. 提高消费并行度：增加队列数和消费者数量，提高单个消费者的并行消费线程
+        consumer.setConsumeThreadMax(20);
+        // 2. 批处理消费，这样一次能拿到多条消息
+        consumer.setConsumeMessageBatchMaxSize(1000);
+        // 3. TODO 跳过非核心消息
+        // 当负载很重的时候，为了保住那些核心的消息，跳过非核心消息。
     }
 }
